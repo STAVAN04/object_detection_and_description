@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Detection Interface</title>
+    <link rel="stylesheet" href="../static/style.css">
+
+</head>
+<body>
+    <h1>Object Detection Demo</h1>
+        <!-- Section 1: Upload Video for Detection -->
+    <section id="upload-section">
+        <h2>Upload Video for Detection</h2>
+        <input type="file" id="videoFile" class="videoFile" accept="video/*">
+        <button id="uploadBtn">Upload</button>
+        <button id="stopUpload" style="display:none;">Stop Detection</button>
+        <div style="margin: 10px 0;">
+            <label>
+                <input type="checkbox" id="showLiveProcessing"> Show real-time processing
+            </label>
+        </div>
+        <div class="loader" id="uploadLoader"></div>
+        <div id="uploadStatus"></div>
+        <div id="uploadStream" style="display:none;">
+            <img id="uploadLiveImage" src="" alt="Processing Stream" width="640" height="480">
+        </div>
+        <video id="processedVideo" width="640" height="480" controls style="display:none;">
+            <source id="processedSource" src="" type="video/mp4">
+        </video>
+    </section>
+
+    <!-- Section 2: Live Detection -->
+    <section id="live-section">
+        <h2>Live Detection</h2>
+        <button id="startLive">Start Live Detection</button>
+        <button id="stopLive" style="display:none;">Stop Live Detection</button>
+        <div class="loader" id="liveLoader"></div>
+        <div id="liveStatus"></div>
+        <div id="liveStream" style="display:none;">
+            <img id="liveImage" src="" alt="Live Detection Stream" width="640" height="480">
+        </div>
+        <video id="liveOutputVideo" width="640" height="480" controls style="display:none;">
+            <source id="liveOutputSource" src="" type="video/mp4">
+        </video>
+    </section>
+    <script src="../static/script.js"></script>
+
+</body>
+</html>
