@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SenseSight.ai</title>
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/about.css">
+    <script src="../static/js/dashboard.js"></script>
+</head>
+    <body class="background">
+        <header class="navbar">
+            <div class="navbar-content">
+                <img src="../static/images/logo.png" alt="Sensesight Logo" class="logo"/>
+                <h1 class="navbar-title">SenseSight.ai</h1>
+                <div class="navbar-icon">
+                    <button class="profile-btn" onclick="openProfileDetails()">
+                        <img src="../static/images/user_1.png" alt="User Icon">
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div id="sideMenu" class="side-menu">
+            <div class="side-menu-handler">
+                <samp class="menu-text">Options</samp>
+                <button class="toggle-btn" onclick="toggleMenu()">
+                    <span class="toggle-icon">&#11166;</span>
+                    <span class="close-icon">&#11164;</span>
+                </button>
+            </div>
+            <ul class="menu-options">
+                <li onclick="window.location.href='/dashboard/home'">
+                    <i class="fas fa-home"></i> <span class="menu-text">Home</span>
+                </li>
+                <li onclick="window.location.href='/dashboard/history'">
+                    <i class="fas fa-history"></i>
+                    <span class="menu-text">History</span>
+                </li>
+                <li onclick="window.location.href='/dashboard/aboutus'">
+                    <i class="fas fa-info-circle"></i>
+                    <span class="menu-text">About Us</span>
+                </li>
+            </ul>
+            <ul class="logOutBtn">
+                <li onclick="showLogoutConfirmation()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="menu-text">Log Out</span>
+                </li>
+            </ul>
+        </div>
+        <div class="main-container">
+            <section class="about-section">
+                <div class="about-content">
+                    <h1>About Us</h1></br>
+                    <p>At SenseSight.ai, we believe that technology should bridge gaps and create an inclusive world. Our
+                        platform empowers visually impaired individuals by providing real-time object detection and voice
+                        feedback, making everyday interactions seamless.</p></br>
+                    <p>We believe that by transforming vision into voice, we can enable a more inclusive and empowering
+                        experience for everyone.</p></br>
+                    <p>With AI at our core, we are committed to developing technology that not only recognizes objects but also
+                        communicates the environment in real-time, allowing individuals to navigate with confidence.</p></br>
+                    <p>We invite you to be part of our journey in redefining accessibility and shaping a future where everyone,
+                        regardless of their vision, can experience the world fully.</p></br>
+                </div>
+                <div class="about-banner">
+                </div>
+            </section>
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 SenseSight.ai. All rights reserved.</p>
+            </div>
+        </footer>
+        <div id="profileDetails" class="profile-popup">
+            <div class="profile-popup-content">
+                <button class="close-btn" onclick="closeProfileDetails()">×</button>
+                <div class="profile-avatar">
+                    <div class="avatar-circle">
+                        <img src="../static/images/user_1.png" alt="Profile icon">
+                    </div>
+                </div>
+                <h2>Personal Details</h2>
+                <form id="detailsForm">
+                    <div class="form-group">
+                        <label for="name"><i class="icon-user"></i> Name:</label>
+                        <input type="text" id="name" placeholder="{{ data.name }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="icon-user"></i> Username:</label>
+                        <input type="email" id="email" placeholder="{{ data.email }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="created_at"><i class="icon-phone"></i> Created at:</label>
+                        <input type="text" id="created_at" placeholder="{{ data.created_at }}" readonly>
+                    </div>
+                    <button class="edit-btn"><a href="/dashboard/profile/edit"  id="edit-link">Edit Profile</a></button>
+                </form>
+            </div>
+        </div>
+        <div id="logoutPopup" class="logout-popup">
+            <div class="popup-content">
+                <p>Are you sure you want to log out?</p>
+                <div class="popup-buttons">
+                    <button class="popup-btn yes-btn" onclick="logout()">Yes</button>
+                    <button class="popup-btn no-btn" onclick="closeLogoutPopup()">No</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
