@@ -8,4 +8,4 @@ __pycache__/
 .DS_Store
 directory.txt 
 *.log
-SenseSight_object_detection/app/uploads/
+
